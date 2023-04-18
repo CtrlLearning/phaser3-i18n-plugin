@@ -1,0 +1,1 @@
+{"version":3,"file":"I18nScene.js","sourceRoot":"","sources":["../../../../../src/com/koreez/plugin/i18n/I18nScene.ts"],"names":[],"mappings":"","sourcesContent":["import { Ii18n } from \"./Ii18n\";\r\n\r\nexport interface I18nScene extends Phaser.Scene {\r\n    i18n: Ii18n;\r\n}\r\n"]}

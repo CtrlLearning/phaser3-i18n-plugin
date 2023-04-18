@@ -4,7 +4,7 @@ const setText: (value: string) => any = function(value: string): any {
     if (value !== this._i18nKey) {
         this._i18nKey = value.toString() || "";
     }
-    return this._setText(i18next.t(this._i18nKey, this._interpolations) || "");
+    return this._setText(this._i18nKey);
 };
 
 const interpolations: any = {
@@ -81,14 +81,15 @@ const textExtensions: any = {
             return;
         }
         gameObjectFactory.register("text", function(
-            x: any,
-            y: any,
-            str: any,
+            x: number,
+            y: number,
+            str: string,
             style: any,
             theInterpolations: any
         ): Phaser.GameObjects.GameObject {
-            const aText: Phaser.GameObjects.GameObject = this.scene.add._text(x, y, str, style);
-            (aText as any).interpolations = theInterpolations;
+            let txt = str
+            if(str !== "") { txt = i18next.t(str, theInterpolations) }
+            const aText: Phaser.GameObjects.GameObject = this.scene.add._text(x, y, txt, style);
             return aText;
         });
     },
@@ -103,15 +104,16 @@ const textExtensions: any = {
             return;
         }
         gameObjectFactory.register("bitmapText", function(
-            x: any,
-            y: any,
+            x: number,
+            y: number,
             font: any,
-            str: any,
-            size: any,
+            str: string,
+            size: number,
             theInterpolations: any
         ): Phaser.GameObjects.GameObject {
-            const aText: Phaser.GameObjects.GameObject = this.scene.add._bitmapText(x, y, font, str, size);
-            (aText as any).interpolations = theInterpolations;
+            let txt = str
+            if(str !== "") { txt = i18next.t(str, theInterpolations) }
+            const aText: Phaser.GameObjects.GameObject = this.scene.add._bitmapText(x, y, font, txt, size);
             return aText;
         });
     },
@@ -126,15 +128,16 @@ const textExtensions: any = {
             return;
         }
         gameObjectFactory.register("dynamicBitmapText", function(
-            x: any,
-            y: any,
+            x: number,
+            y: number,
             font: any,
-            str: any,
-            size: any,
+            str: string,
+            size: number,
             theInterpolations: any
         ): Phaser.GameObjects.GameObject {
-            const aText: Phaser.GameObjects.GameObject = this.scene.add._dynamicBitmapText(x, y, font, str, size);
-            (aText as any).interpolations = theInterpolations;
+            let txt = str
+            if(str !== "") { txt = i18next.t(str, theInterpolations) }
+            const aText: Phaser.GameObjects.GameObject = this.scene.add._dynamicBitmapText(x, y, font, txt, size);
             return aText;
         });
     }
