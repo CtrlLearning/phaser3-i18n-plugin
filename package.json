@@ -18,10 +18,7 @@
         "compile:src": "tsc -d --importHelpers",
         "compile:test": "tsc -p tsconfig.test.json -d --importHelpers",
         "dev": "webpack",
-        "build": "webpack --env.production",
-        "prepare": "npm run clean-up && npm run compile:src",
-        "prepublishOnly": "publish-please guard",
-        "publish-please": "npm run tslint && npm run autoformat && npm run clean-up && npm run test && publish-please"
+        "build": "webpack --env.production"
     },
     "repository": {
         "type": "git",
