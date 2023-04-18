@@ -3,7 +3,6 @@
 coverage
 dist/lib
 dist-test
-lib
 lib-test
 node_modules
 *.as

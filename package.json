@@ -1,5 +1,5 @@
 {
-    "name": "@koreez/phaser3-i18n",
+    "name": "@CtrlLearning/phaser3-i18n",
     "version": "2.0.6",
     "description": "Internationalization for phaser done right. Using the i18next i18n ecosystem.",
     "main": "lib/index.js",
@@ -25,7 +25,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:koreezgames/phaser3-i18n-plugin.git"
+        "url": "git@github.com:CtrlLearning/phaser3-i18n-plugin.git"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org"
