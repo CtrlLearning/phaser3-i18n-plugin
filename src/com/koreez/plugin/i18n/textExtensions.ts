@@ -4,7 +4,12 @@ const setText: (value: string) => any = function(value: string): any {
     if (value !== this._i18nKey) {
         this._i18nKey = value.toString() || "";
     }
-    return this._setText(this._i18nKey);
+
+    if(this.interpolations === undefined || this._i18nKey === "") {
+        return this._setText(this._i18nKey)
+    } else {
+        return this._setText(i18next.t(this._i18nKey, this._interpolations) || "");
+    }
 };
 
 const interpolations: any = {
@@ -13,7 +18,7 @@ const interpolations: any = {
     },
 
     set(value: any): void {
-        this._interpolations = value;
+        this._interpolations = value === undefined ? null : value;
         this.setText(this._i18nKey);
     }
 };
@@ -87,9 +92,8 @@ const textExtensions: any = {
             style: any,
             theInterpolations: any
         ): Phaser.GameObjects.GameObject {
-            let txt = str
-            if(str !== "") { txt = i18next.t(str, theInterpolations) }
-            const aText: Phaser.GameObjects.GameObject = this.scene.add._text(x, y, txt, style);
+            const aText: Phaser.GameObjects.GameObject = this.scene.add._text(x, y, str, style);
+            (aText as any).interpolations = theInterpolations;
             return aText;
         });
     },
@@ -111,9 +115,8 @@ const textExtensions: any = {
             size: number,
             theInterpolations: any
         ): Phaser.GameObjects.GameObject {
-            let txt = str
-            if(str !== "") { txt = i18next.t(str, theInterpolations) }
-            const aText: Phaser.GameObjects.GameObject = this.scene.add._bitmapText(x, y, font, txt, size);
+            const aText: Phaser.GameObjects.GameObject = this.scene.add._bitmapText(x, y, font, str, size);
+            (aText as any).interpolations = theInterpolations;
             return aText;
         });
     },
@@ -135,9 +138,8 @@ const textExtensions: any = {
             size: number,
             theInterpolations: any
         ): Phaser.GameObjects.GameObject {
-            let txt = str
-            if(str !== "") { txt = i18next.t(str, theInterpolations) }
-            const aText: Phaser.GameObjects.GameObject = this.scene.add._dynamicBitmapText(x, y, font, txt, size);
+            const aText: Phaser.GameObjects.GameObject = this.scene.add._dynamicBitmapText(x, y, font, str, size);
+            (aText as any).interpolations = theInterpolations;
             return aText;
         });
     }
