@@ -6,7 +6,7 @@ export declare class I18nPlugin extends Phaser.Plugins.ScenePlugin implements Ii
     readonly services: i18next.Services;
     private languageChangedBound;
     boot(): void;
-    initialize(options: any, callback?: i18next.Callback): void;
+    initialize(options: any, callback?: i18next.Callback): Promise<i18next.TFunction>;
     use(module: any): i18next.i18n;
     t<TResult extends string | object | Array<string | object> | undefined = string, TKeys extends string = string, TValues extends object = object>(key: TKeys | TKeys[], options?: i18next.TOptions<TValues>): TResult;
     exists(key: string | string[], options?: i18next.InterpolationOptions): boolean;

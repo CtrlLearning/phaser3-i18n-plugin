@@ -40,13 +40,12 @@ export class I18nPlugin extends Phaser.Plugins.ScenePlugin implements Ii18n {
      * @param options - Initial options.
      * @param callback - will be called after all translations were loaded or with an error when failed (in case of using a backend).
      */
-    public initialize(options: any, callback?: i18next.Callback): void {
+    public initialize(options: any, callback?: i18next.Callback): Promise<i18next.TFunction> {
         i18next.use(new XHR(null, options));
         if (options) {
-            i18next.init(options, callback);
-            return;
+            return i18next.init(options, callback);
         }
-        i18next.init(callback);
+        return i18next.init(callback);
     }
 
     /**
