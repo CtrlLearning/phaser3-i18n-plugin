@@ -1,5 +1,4 @@
 import i18next from "i18next";
-import * as XHR from "i18next-xhr-backend";
 import { Ii18n } from "./i18n/Ii18n";
 import textExtensions from "./i18n/textExtensions";
 
@@ -41,7 +40,6 @@ export class I18nPlugin extends Phaser.Plugins.ScenePlugin implements Ii18n {
      * @param callback - will be called after all translations were loaded or with an error when failed (in case of using a backend).
      */
     public initialize(options: any, callback?: i18next.Callback): Promise<i18next.TFunction> {
-        i18next.use(new XHR(null, options));
         if (options) {
             return i18next.init(options, callback);
         }

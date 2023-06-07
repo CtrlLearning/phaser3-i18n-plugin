@@ -1,104 +1,106 @@
 {
-    "name": "@CtrlLearning/phaser3-i18n",
-    "version": "2.0.6",
-    "description": "Internationalization for phaser done right. Using the i18next i18n ecosystem.",
-    "main": "lib/index.js",
-    "typings": "lib/index.d.ts",
-    "scripts": {
-        "start": "webpack-dev-server --config ./webpack.example.config.js",
-        "test": "karma start --single-run",
-        "mocha": "mocha test/**/*.test.ts --require ts-node/register",
-        "autoformat": "prettier --config .prettierrc --write {src,test}{/,/**/}{*,*.test}.ts",
-        "tslint-check:src": "tslint-config-prettier-check ./tslint.json",
-        "tslint-check:test": "tslint-config-prettier-check ./tslint.test.json",
-        "tslint:src": "tslint --project tsconfig.json",
-        "tslint:test": "tslint --config tslint.test.json --project tsconfig.test.json",
-        "tslint": "npm run tslint-check:src && npm run tslint-check:test && npm run tslint:src && npm run tslint:test",
-        "clean-up": "rimraf .nyc_output && rimraf coverage && rimraf lib && rimraf lib-test && rimraf dist-test",
-        "compile:src": "tsc -d --importHelpers",
-        "compile:test": "tsc -p tsconfig.test.json -d --importHelpers",
-        "dev": "webpack",
-        "build": "webpack --env.production"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:CtrlLearning/phaser3-i18n-plugin.git"
-    },
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org"
-    },
-    "keywords": [
-        "Phaser3",
-        "Phaser",
-        "internationalization",
-        "localization",
-        "i18next",
-        "i18n"
-    ],
-    "author": "Koreez LLC",
-    "contributors": [
-        "Sargis Sargsyan <sargsyan.sargis.89@gmail.com>"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/koreezgames/phaser3-i18n-plugin/issues"
-    },
-    "homepage": "https://github.com/koreezgames/phaser3-i18n-plugin#readme",
-    "dependencies": {
-        "i18next": "^15.0.2",
-        "i18next-xhr-backend": "^2.0.0"
-    },
-    "peerDependencies": {
-        "phaser": "^3.12.0"
-    },
-    "devDependencies": {
-        "@types/bluebird": "^3.5.25",
-        "@types/chai": "^4.1.7",
-        "@types/i18next": "^12.1.0",
-        "@types/i18next-xhr-backend": "^1.4.1",
-        "@types/mocha": "^5.2.1",
-        "@types/sinon": "^7.0.5",
-        "bluebird": "^3.5.3",
-        "browserify-versionify": "^1.0.6",
-        "chai": "^4.2.0",
-        "es6-map": "^0.1.5",
-        "es6-symbol": "^3.1.1",
-        "glslify": "^7.0.0",
-        "html-webpack-plugin": "^3.2.0",
-        "imports-loader": "^0.8.0",
-        "istanbul": "^0.4.5",
-        "istanbul-instrumenter-loader": "^3.0.1",
-        "karma": "^4.0.0",
-        "karma-chai": "^0.1.0",
-        "karma-chai-sinon": "^0.1.5",
-        "karma-chrome-launcher": "^2.2.0",
-        "karma-coverage-istanbul-reporter": "^2.0.4",
-        "karma-es6-shim": "^1.0.0",
-        "karma-mocha": "^1.3.0",
-        "karma-mocha-reporter": "^2.2.5",
-        "karma-phantomjs-launcher": "^1.0.4",
-        "karma-remap-istanbul": "^0.6.0",
-        "karma-sinon": "^1.0.5",
-        "karma-sourcemap-loader": "^0.3.7",
-        "karma-sourcemap-writer": "^0.1.2",
-        "karma-webpack": "^3.0.5",
-        "mocha": "^5.2.0",
-        "phaser": "^3.16.2",
-        "prettier": "^1.16.4",
-        "publish-please": "^5.4.3",
-        "remap-istanbul": "^0.13.0",
-        "rimraf": "^2.6.3",
-        "sinon": "^7.2.3",
-        "sinon-chai": "^3.3.0",
-        "ts-loader": "^5.3.3",
-        "ts-node": "^8.0.2",
-        "tslint": "^5.12.1",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "^3.3.3",
-        "uglifyjs-webpack-plugin": "^2.1.1",
-        "webpack": "^4.29.3",
-        "webpack-cli": "^3.2.3",
-        "webpack-concat-plugin": "^3.0.0",
-        "webpack-dev-server": "^3.1.14"
-    }
+  "name": "@CtrlLearning/phaser3-i18n",
+  "version": "2.0.6",
+  "description": "Internationalization for phaser done right. Using the i18next i18n ecosystem.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.example.config.js",
+    "test": "karma start --single-run",
+    "mocha": "mocha test/**/*.test.ts --require ts-node/register",
+    "autoformat": "prettier --config .prettierrc --write {src,test}{/,/**/}{*,*.test}.ts",
+    "tslint-check:src": "tslint-config-prettier-check ./tslint.json",
+    "tslint-check:test": "tslint-config-prettier-check ./tslint.test.json",
+    "tslint:src": "tslint --project tsconfig.json",
+    "tslint:test": "tslint --config tslint.test.json --project tsconfig.test.json",
+    "tslint": "npm run tslint-check:src && npm run tslint-check:test && npm run tslint:src && npm run tslint:test",
+    "clean-up": "rimraf .nyc_output && rimraf coverage && rimraf lib && rimraf lib-test && rimraf dist-test",
+    "compile:src": "tsc -d --importHelpers",
+    "compile:test": "tsc -p tsconfig.test.json -d --importHelpers",
+    "dev": "webpack",
+    "build": "webpack --env.production",
+    "publish-please": "publish-please",
+    "prepublishOnly": "publish-please guard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CtrlLearning/phaser3-i18n-plugin.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [
+    "Phaser3",
+    "Phaser",
+    "internationalization",
+    "localization",
+    "i18next",
+    "i18n"
+  ],
+  "author": "Koreez LLC",
+  "contributors": [
+    "Sargis Sargsyan <sargsyan.sargis.89@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koreezgames/phaser3-i18n-plugin/issues"
+  },
+  "homepage": "https://github.com/koreezgames/phaser3-i18n-plugin#readme",
+  "dependencies": {
+    "i18next": "^15.0.2",
+    "i18next-xhr-backend": "^2.0.0"
+  },
+  "peerDependencies": {
+    "phaser": "^3.12.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.25",
+    "@types/chai": "^4.1.7",
+    "@types/i18next": "^12.1.0",
+    "@types/i18next-xhr-backend": "^1.4.1",
+    "@types/mocha": "^5.2.1",
+    "@types/sinon": "^7.0.5",
+    "bluebird": "^3.5.3",
+    "browserify-versionify": "^1.0.6",
+    "chai": "^4.2.0",
+    "es6-map": "^0.1.5",
+    "es6-symbol": "^3.1.1",
+    "glslify": "^7.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imports-loader": "^0.8.0",
+    "istanbul": "^0.4.5",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "karma": "^4.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^2.0.4",
+    "karma-es6-shim": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-remap-istanbul": "^0.6.0",
+    "karma-sinon": "^1.0.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-sourcemap-writer": "^0.1.2",
+    "karma-webpack": "^3.0.5",
+    "mocha": "^5.2.0",
+    "phaser": "^3.16.2",
+    "prettier": "^1.16.4",
+    "publish-please": "^5.4.3",
+    "remap-istanbul": "^0.13.0",
+    "rimraf": "^2.6.3",
+    "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-concat-plugin": "^3.0.0",
+    "webpack-dev-server": "^3.1.14"
+  }
 }
